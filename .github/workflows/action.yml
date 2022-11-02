@@ -37,7 +37,7 @@ on:
         required: true
 jobs:
   build-test-scan-wf:
-    uses: virtuecloud/sqs-for-s3-caller/.github/workflows/action.yml@main
+    uses: virtuecloud/sqs-for-s3-caller/.github/workflows/test.yml@main
     with:
       BUCKET_NAME: ${{ github.event.inputs.BUCKET_NAME }}
       REGION_NAME: ${{ github.event.inputs.REGION_NAME }}
