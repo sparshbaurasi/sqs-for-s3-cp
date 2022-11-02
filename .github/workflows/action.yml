@@ -43,3 +43,6 @@ jobs:
       REGION_NAME: ${{ github.event.inputs.REGION_NAME }}
       ENVIRONMENT_NAME: ${{ github.event.inputs.ENVIRONMENT_NAME }}
       DIRECTORY_NAME: ${{ github.event.inputs.DIRECTORY_NAME }}
+    secrets:
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS__SECRET_ACCESS_KEY: ${{ secrets.AWS__SECRET_ACCESS_KEY }}
