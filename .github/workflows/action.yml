@@ -11,7 +11,7 @@ on:
         - tf-state-bucket1
       KEY_NAME:
         type: choice
-        description: 'bucket name'
+        description: 'Key name'
         required: true
         options: 
         - key-prod      
