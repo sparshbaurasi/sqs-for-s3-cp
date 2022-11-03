@@ -46,7 +46,7 @@ on:
         required: true
         options: 
         - Plan
-        - Plan-Apply
+        - Apply
         - Plan-Destroy
         - Destroy
 #     secrets:
