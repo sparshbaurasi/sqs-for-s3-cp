@@ -36,7 +36,7 @@ on:
         required: true
         options: 
         - Plan
-        - Plan-Apply        
+        - Apply        
 #     secrets:
 #       AWS_ACCESS_KEY:
 #         required: true
