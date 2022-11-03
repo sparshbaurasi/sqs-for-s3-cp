@@ -30,11 +30,18 @@ on:
         options: 
         - s3-sqs-event
         - s3-bucket
-    secrets:
-      AWS_ACCESS_KEY:
+      TERRAFORM_COMMAND:
+        type: choice
+        description: 'Root directory'
         required: true
-      AWS_SECRET_ACCESS_KEY:
-        required: true
+        options: 
+        - s3-sqs-event
+        - s3-bucket        
+#     secrets:
+#       AWS_ACCESS_KEY:
+#         required: true
+#       AWS_SECRET_ACCESS_KEY:
+#         required: true
 jobs:
   build-test-scan-wf:
     uses: virtuecloud/sqs-for-s3-caller/.github/workflows/action.yml@main
@@ -43,6 +50,7 @@ jobs:
       REGION_NAME: ${{ github.event.inputs.REGION_NAME }}
       ENVIRONMENT_NAME: ${{ github.event.inputs.ENVIRONMENT_NAME }}
       DIRECTORY_NAME: ${{ github.event.inputs.DIRECTORY_NAME }}
+      TERRAFORM_COMMAND: ${{ github.event.inputs.TERRAFORM_COMMAND }}
     secrets:
       AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
