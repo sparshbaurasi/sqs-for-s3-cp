@@ -36,7 +36,10 @@ on:
         required: true
         options: 
         - Plan
-        - Apply        
+        - Plan-Apply
+        - Apply
+        - Plan-Destroy
+        - Destroy
 #     secrets:
 #       AWS_ACCESS_KEY:
 #         required: true
