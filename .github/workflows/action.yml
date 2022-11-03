@@ -32,11 +32,11 @@ on:
         - s3-bucket
       TERRAFORM_COMMAND:
         type: choice
-        description: 'Root directory'
+        description: 'Terraform command'
         required: true
         options: 
-        - s3-sqs-event
-        - s3-bucket        
+        - Plan
+        - Plan-Apply        
 #     secrets:
 #       AWS_ACCESS_KEY:
 #         required: true
