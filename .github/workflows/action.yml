@@ -14,7 +14,7 @@ on:
         description: 'Key name'
         required: true
         options: 
-        - /terraform.tfstate      
+        - state/terraform.tfstate      
       REGION_NAME:
         type: choice
         description: 'region'
