@@ -10,11 +10,15 @@ on:
         options: 
         - tf-state-bucket1
       KEY_NAME:
-        type: choice
+        type: string
         description: 'Key name'
         required: true
-        options: 
-        - state/terraform.tfstate      
+        default: state/terraform.tfstate
+      STATE_LOCK_TABLE_NAME:
+        type: string
+        description: 'Dynamodb table name'
+        required: true
+        default: terraform-state-lock-dynamo
       REGION_NAME:
         type: choice
         description: 'region'
@@ -56,6 +60,7 @@ jobs:
     with:
       BUCKET_NAME: ${{ github.event.inputs.BUCKET_NAME }}
       KEY_NAME: ${{ github.event.inputs.KEY_NAME }}
+      STATE_LOCK_TABLE_NAME: ${{ github.event.inputs.STATE_LOCK_TABLE_NAME }}
       REGION_NAME: ${{ github.event.inputs.REGION_NAME }}
       ENVIRONMENT_NAME: ${{ github.event.inputs.ENVIRONMENT_NAME }}
       DIRECTORY_NAME: ${{ github.event.inputs.DIRECTORY_NAME }}
